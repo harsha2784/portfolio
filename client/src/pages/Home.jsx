@@ -33,7 +33,7 @@ function Home() {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/home"
+        "https://portfolio-server-3rhw.onrender.com/api/home"
       );
 
       if (res.data) {

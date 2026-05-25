@@ -33,7 +33,7 @@ function AddService() {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/services",
+        "https://portfolio-server-3rhw.onrender.com/api/services",
         f
       );
 

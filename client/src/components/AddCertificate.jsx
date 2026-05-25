@@ -29,7 +29,7 @@ function AddCertificate() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/upload",
+        "https://portfolio-server-3rhw.onrender.com/api/upload",
         data
       );
 
@@ -56,7 +56,7 @@ function AddCertificate() {
         await uploadImage();
 
       await axios.post(
-        "http://localhost:5000/api/certificates",
+        "https://portfolio-server-3rhw.onrender.com/api/certificates",
         {
           ...f,
           image: imageUrl,

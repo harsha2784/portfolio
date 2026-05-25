@@ -15,7 +15,7 @@ function ProjectList({ manage }) {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/projects"
+        "https://portfolio-server-3rhw.onrender.com/api/projects"
       );
 
       setP(res.data);
@@ -42,7 +42,7 @@ function ProjectList({ manage }) {
     try {
 
       await axios.delete(
-        `http://localhost:5000/api/projects/${id}`
+        `https://portfolio-server-3rhw.onrender.com/api/projects/${id}`
       );
 
       alert("Project Deleted");

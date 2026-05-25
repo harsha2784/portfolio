@@ -27,7 +27,7 @@ function AddHome() {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/home"
+        "https://portfolio-server-3rhw.onrender.com/api/home"
       );
 
       if (res.data) {
@@ -67,7 +67,7 @@ function AddHome() {
 
         const res =
           await axios.post(
-            "http://localhost:5000/api/upload",
+            "https://portfolio-server-3rhw.onrender.com/api/upload",
             data
           );
 
@@ -94,7 +94,7 @@ function AddHome() {
         await uploadImage();
 
       await axios.post(
-        "http://localhost:5000/api/home",
+        "https://portfolio-server-3rhw.onrender.com/api/home",
         {
           ...f,
           image: imageUrl,

@@ -24,7 +24,7 @@ function Contact() {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/messages",
+        "https://portfolio-server-3rhw.onrender.com/api/messages",
         f
       );
 

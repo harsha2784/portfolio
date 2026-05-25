@@ -31,7 +31,7 @@ function AddProject() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/upload",
+        "https://portfolio-server-3rhw.onrender.com/api/upload",
         data
       );
 
@@ -55,7 +55,7 @@ function AddProject() {
         await uploadImage();
 
       await axios.post(
-        "http://localhost:5000/api/projects",
+        "https://portfolio-server-3rhw.onrender.com/api/projects",
         {
           ...f,
           image: imageUrl,

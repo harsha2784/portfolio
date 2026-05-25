@@ -28,7 +28,7 @@ function Services({ manage }) {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/services"
+        "https://portfolio-server-3rhw.onrender.com/api/services"
       );
 
       setS(res.data);
@@ -55,7 +55,7 @@ function Services({ manage }) {
     try {
 
       await axios.delete(
-        `http://localhost:5000/api/services/${id}`
+        `https://portfolio-server-3rhw.onrender.com/api/services/${id}`
       );
 
       alert("Service Deleted");

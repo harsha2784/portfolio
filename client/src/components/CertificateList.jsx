@@ -15,7 +15,7 @@ function CertificateList({ manage }) {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/certificates"
+        "https://portfolio-server-3rhw.onrender.com/api/certificates"
       );
 
       setC(res.data);
@@ -42,7 +42,7 @@ function CertificateList({ manage }) {
     try {
 
       await axios.delete(
-        `http://localhost:5000/api/certificates/${id}`
+        `https://portfolio-server-3rhw.onrender.com/api/certificates/${id}`
       );
 
       alert(
