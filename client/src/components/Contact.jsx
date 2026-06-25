@@ -24,9 +24,9 @@ function Contact() {
     try {
 
       await axios.post(
-        "https://portfolio-server-3rhw.onrender.com/api/messages",
-        f
-      );
+  "https://portfolio-server-3rhw.onrender.com/api/messages",
+  f
+);
 
       alert(
         "Message Sent Successfully"
