@@ -6,17 +6,12 @@ import {
 import axios from "axios";
 
 import Navbar from "../components/Navbar";
-
 import ProjectList from "../components/ProjectList";
-
 import Services from "../components/Services";
-
 import CertificateList from "../components/CertificateList";
-
 import Contact from "../components/Contact";
 
 function Home() {
-
   const [h, setH] = useState({
     name: "",
     role: "",
@@ -29,9 +24,7 @@ function Home() {
   }, []);
 
   const getHome = async () => {
-
     try {
-
       const res = await axios.get(
         "https://portfolio-server-3rhw.onrender.com/api/home"
       );
@@ -39,60 +32,44 @@ function Home() {
       if (res.data) {
         setH(res.data);
       }
-
     } catch (error) {
-
       console.log(error);
     }
   };
 
   return (
-
     <div className="min-h-screen text-white relative">
-
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
 
         {/* HERO SECTION */}
+        <section className="min-h-screen flex items-center pt-20 md:pt-24">
 
-        <section className="min-h-screen flex items-center">
-
-          <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
             {/* LEFT SIDE */}
-
             <div>
 
-              <div className="inline-block px-5 py-2 rounded-full glass mb-8">
-
+              <div className="inline-block px-5 py-2 rounded-full glass mb-6">
                 <p className="text-cyan-300 tracking-[4px] uppercase text-sm font-semibold">
-
                   PORTFOLIO
-
                 </p>
-
               </div>
 
               <h1 className="text-5xl md:text-7xl font-black leading-tight">
-
                 {h.name}
-
               </h1>
 
-              <h2 className="mt-6 text-2xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 via-violet-400 to-pink-500 bg-clip-text text-transparent">
-
+              <h2 className="mt-4 text-2xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 via-violet-400 to-pink-500 bg-clip-text text-transparent">
                 {h.role}
-
               </h2>
 
-              <p className="mt-10 text-gray-300 text-lg md:text-2xl leading-relaxed max-w-3xl">
-
+              <p className="mt-8 text-gray-300 text-lg md:text-2xl leading-relaxed max-w-3xl">
                 {h.desc}
-
               </p>
 
-              <div className="flex flex-wrap gap-6 mt-12">
+              <div className="flex flex-wrap gap-6 mt-10">
 
                 <a
                   href="#projects"
@@ -113,18 +90,12 @@ function Home() {
             </div>
 
             {/* RIGHT SIDE */}
-
             <div className="flex justify-center">
 
               {h.image && (
-
                 <div className="relative">
 
-                  {/* OUTER GLOW */}
-
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-violet-500 to-pink-500 rounded-[40px] blur-2xl opacity-40 scale-105" />
-
-                  {/* IMAGE */}
 
                   <img
                     src={h.image}
@@ -142,7 +113,6 @@ function Home() {
         </section>
 
         {/* PROJECTS */}
-
         <section
           id="projects"
           className="py-28"
@@ -151,7 +121,6 @@ function Home() {
         </section>
 
         {/* SERVICES */}
-
         <section
           id="services"
           className="py-28"
@@ -160,7 +129,6 @@ function Home() {
         </section>
 
         {/* CERTIFICATES */}
-
         <section
           id="certificates"
           className="py-28"
@@ -169,7 +137,6 @@ function Home() {
         </section>
 
         {/* CONTACT */}
-
         <section
           id="contact"
           className="py-28"
@@ -178,7 +145,6 @@ function Home() {
         </section>
 
       </div>
-
     </div>
   );
 }
