@@ -2,10 +2,15 @@ import Message from "../models/Message.js";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 
@@ -14,6 +19,7 @@ export const addMessage = async (
   res
 ) => {
   try {
+
     const { name, email, message } =
       req.body;
 
@@ -43,16 +49,16 @@ export const addMessage = async (
         to: process.env.GMAIL_USER,
 
         subject:
-          "New Portfolio Message",
+          "New Portfolio Contact Message",
 
         html: `
-          <div style="font-family: Arial, sans-serif; padding: 20px;">
+          <div style="font-family:Arial,sans-serif;padding:20px;">
             
             <h2 style="color:#2563eb;">
               New Portfolio Contact Message
             </h2>
 
-            <hr />
+            <hr/>
 
             <p>
               <strong>Name:</strong>
@@ -81,10 +87,10 @@ export const addMessage = async (
 
           </div>
         `,
-      });
+    });
 
     console.log(
-      "EMAIL SENT SUCCESSFULLY:"
+      "EMAIL SENT SUCCESSFULLY"
     );
 
     console.log(
@@ -99,14 +105,13 @@ export const addMessage = async (
 
   } catch (error) {
 
-    console.log(
-      "EMAIL ERROR:"
-    );
+    
 
     console.log(error);
 
     res.status(500).json({
-      msg: error.message,
+      msg:
+        error.message,
     });
   }
 };
@@ -127,7 +132,8 @@ export const getMessages = async (
   } catch (error) {
 
     res.status(500).json({
-      msg: error.message,
+      msg:
+        error.message,
     });
   }
 };
