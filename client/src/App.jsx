@@ -7,12 +7,11 @@ import {
 import Home from "./pages/Home";
 
 import ManageProject from "./pages/ManageProject";
-
 import ManageCertificate from "./pages/ManageCertificate";
-
 import ManageService from "./pages/ManageService";
-
 import ManageHome from "./pages/ManageHome";
+
+import ManageMessages from "./pages/ManageMessages";
 
 function App() {
 
@@ -34,10 +33,14 @@ function App() {
 
         <Routes>
 
+          {/* PUBLIC */}
+
           <Route
             path="/"
             element={<Home />}
           />
+
+          {/* ADMIN */}
 
           <Route
             path="/manage/project"
@@ -48,6 +51,7 @@ function App() {
             path="/manage/certificate"
             element={<ManageCertificate />}
           />
+
           <Route
             path="/manage/service"
             element={<ManageService />}
@@ -56,6 +60,11 @@ function App() {
           <Route
             path="/manage/home"
             element={<ManageHome />}
+          />
+
+          <Route
+            path="/messages-dashboard"
+            element={<ManageMessages />}
           />
 
         </Routes>
